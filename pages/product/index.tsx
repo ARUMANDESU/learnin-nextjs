@@ -1,11 +1,37 @@
 import React from "react";
+import Link from "next/link";
 
-const Index = () => {
+const Index = ({ productId = 100 }: { productId: number }) => {
   return (
     <>
-      <h2>Product 1</h2>
-      <h2>Product 2</h2>
-      <h2>Product 3</h2>
+      <Link href="/">
+        <a>
+          <h1>HomePage</h1>
+        </a>
+      </Link>
+      <Link href="/product/1">
+        <a>
+          <h2>Product 1</h2>
+        </a>
+      </Link>
+      <Link href="/product/2">
+        <a>
+          <h2>Product 2</h2>
+        </a>
+      </Link>
+      <Link
+        href="/product/3"
+        replace /*"replace" prob, replaces current history state instead of add new url in this tag  */
+      >
+        <a>
+          <h2>Product 3</h2>
+        </a>
+      </Link>
+      <Link href={`/product/${productId}`}>
+        <a>
+          <h2>Product {productId}</h2>
+        </a>
+      </Link>
     </>
   );
 };
