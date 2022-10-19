@@ -4,7 +4,10 @@ import Link from "next/link";
 const Index = ({ productId = 100 }: { productId: number }) => {
   return (
     <>
-      <Link href="/">
+      <Link
+        href="/"
+        /* takes in only one child! like <a></a> . if you pass children/multiple components between <Link></Link> it will throw you an error*/
+      >
         <a>
           <h1>HomePage</h1>
         </a>
