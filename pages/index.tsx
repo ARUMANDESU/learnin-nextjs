@@ -1,7 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    console.log("Placing your order");
+    /*
+     router.push("/product"); //programmatically navigate
+    */
+    router.replace("/product"); //replaces current history
+  };
   return (
     <div>
       <Link href="/">
@@ -24,6 +34,7 @@ const Home = () => {
           <h1>docs</h1>
         </a>
       </Link>
+      <button onClick={handleClick}>Place Order</button>
     </div>
   );
 };
